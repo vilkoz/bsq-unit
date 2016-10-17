@@ -44,6 +44,7 @@ char	**fill_square(int j, int i, char **tmp, int size)
 	{
 		while (x < j + size)
 		{
+			if (tmp[x][y] == '.')
 			tmp[x][y] = 'x';
 			x++;
 		}

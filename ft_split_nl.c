@@ -19,6 +19,8 @@ void	display_arr(char **tmp, int y)
 	i = 0;
 	while (i < y)
 	{
+		ft_putnbr(i);
+		ft_putstr(" ");
 		ft_putstr(tmp[i]);
 		i++;
 	}
@@ -45,6 +47,7 @@ char	**cp_cells(char *str, char **tmp)
 			i++;
 		}
 		tmp[y][x] = '\n';
+		tmp[y][x + 1] = '\0';
 		y++;
 		x = 0;
 		i++;

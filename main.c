@@ -34,15 +34,20 @@ int		main(int argc, char **argv)
 		display_arr(arr, ft_atoi(str));
 	}
 	else
-		while (i < argc)
+		while (++i < argc)
 		{
-			str = read_file(argv[i]);
-			i++;
+			if((str = read_file(argv[i])) == 0)
+				continue ;
 			if (validation(str) == 0)
 			{
-				ft_puterror(argv[0], 2);
+				ft_puterror(argv[i], 2);
 				continue ;
 			}
+			arr = ft_split_nl(str, ft_strlen_slesh(str), ft_atoi(str));
+			if ((arr == (ft_find_square(arr, ft_strlen_slesh(str),
+								ft_atoi(str)))) == 0)
+				ft_puterror(argv[0], 4);
+			display_arr(arr, ft_atoi(str));
 		}
 	return (0);
 }

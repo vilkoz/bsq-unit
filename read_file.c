@@ -27,7 +27,7 @@ char	*read_file(char *file)
 	buf = (char *)malloc(sizeof(char) * BUF_SIZE + 1);
 	if ((fd = open(file, O_RDONLY)) < 0)
 	{
-		ft_puterror("Error", 1);
+		ft_puterror(file, 1);
 		return (0);
 	}
 	while ((bts = read(fd, buf, BUF_SIZE)) > 0)

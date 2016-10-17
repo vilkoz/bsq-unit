@@ -52,4 +52,6 @@ char	**ft_find_square(char **tmp, int x, int y);
 
 void	display_arr(char **tmp, int y);
 
+void	ft_putnbr(int nb);
+
 #endif
